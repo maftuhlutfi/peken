@@ -22,7 +22,7 @@ const socialList = [
 
 const MainFooter = () => {
     return (
-        <Section className='bg-text-primary py-8 lg:py-8'>
+        <div className='bg-text-primary w-full px-4 py-8 lg:py-8'>
             <p className="text-center text-white lg:text-lg lg:font-bold mb-5">pekenaja@2021</p>
             <div className="flex justify-center">
                 {socialList.map((s, i) =>
@@ -31,7 +31,7 @@ const MainFooter = () => {
                     </a>
                 )}
             </div>
-        </Section>
+        </div>
     );
 }
 
