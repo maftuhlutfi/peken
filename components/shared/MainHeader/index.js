@@ -23,9 +23,11 @@ const MainHeader = () => {
     return (
         <div className={`z-50 fixed w-full  ${scrollYPos < 20 ? 'bg-white lg:bg-transparent' : 'bg-white'} left-0 top-0 px-4 transition-all duration-200`}>
             <div className="relative flex items-center justify-between h-20 mx-auto lg:h-28 max-w-7xl">
-                <div className="relative w-32 h-10 lg:w-[160px] lg:h-12">
-                    <Image src='/logo.png' layout="fill" className="object-contain object-left" alt="logo-peken" />
-                </div>
+                <Link href='/'>
+                    <a className="relative w-32 h-10 lg:w-[160px] lg:h-12">
+                        <Image src='/logo.png' layout="fill" className="object-contain object-left" alt="logo-peken" />
+                    </a>
+                </Link>
                 <div
                     className={`h-16 w-16 relative flex items-center justify-end cursor-pointer z-10 lg:hidden`}
                     onClick={() => setShowMenu(prev => !prev)}
