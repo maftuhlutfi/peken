@@ -46,6 +46,18 @@ const SingleBlogPage = ({ blog, uid }) => {
             <MainLayout>
                 <Section className='mt-20'>
                     <div className="max-w-[900px] relative mx-auto">
+                        <BreadCrumbs
+                            links={[
+                                {
+                                    text: 'Blog',
+                                    href: '/blog'
+                                },
+                                {
+                                    text: title,
+                                    href: `/blog/${uid}`
+                                }
+                            ]}
+                        />
                         <Image src={image.url} width={900} height={450} layout="responsive" alt={image.alt} />
                         <div className="mt-10 mb-5 text-text-secondary">{formatDateMonthYear(date)}</div>
                         <h1 className="mb-6 text-4xl font-bold leading-normal">{title}</h1>
