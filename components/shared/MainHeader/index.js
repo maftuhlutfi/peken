@@ -10,17 +10,9 @@ const navMenu = [
         slug: '/'
     },
     {
-        title: 'Pasar',
-        slug: '/pasar'
-    },
-    {
-        title: 'Produk',
-        slug: '/produk'
-    },
-    {
-        title: 'Promo',
-        slug: '/promo'
-    },
+        title: 'Blog',
+        slug: '/blog'
+    }
 ]
 
 const MainHeader = () => {
@@ -30,7 +22,7 @@ const MainHeader = () => {
 
     return (
         <div className={`z-50 fixed w-full  ${scrollYPos < 20 ? 'bg-white lg:bg-transparent' : 'bg-white'} left-0 top-0 px-4 transition-all duration-200`}>
-            <div className="relative h-20 lg:h-28 max-w-7xl mx-auto flex items-center justify-between">
+            <div className="relative flex items-center justify-between h-20 mx-auto lg:h-28 max-w-7xl">
                 <div className="relative w-32 h-10 lg:w-[160px] lg:h-12">
                     <Image src='/logo.png' layout="fill" className="object-contain object-left" alt="logo-peken" />
                 </div>
