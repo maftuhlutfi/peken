@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import useScrollPos from "../../../hooks/useScrollPos";
+import Button from "../Button";
 
 const navMenu = [
     {
@@ -12,6 +13,11 @@ const navMenu = [
     {
         title: 'Blog',
         slug: '/blog'
+    },
+    {
+        title: 'Mulai Belanja',
+        href: 'https://app.pekenaja.com/',
+        isButton: true
     }
 ]
 
@@ -38,9 +44,14 @@ const MainHeader = () => {
                 </div>
                 <div className={`fixed w-full h-screen bg-light-yellow top-0 flex flex-col items-center py-24 ${showMenu ? 'left-0' : 'left-full'} transition-all duration-300 lg:static lg:w-auto lg:bg-transparent lg:flex-row lg:h-auto`}>
                     {navMenu.map((n, i) =>
-                        <Link href={n.slug} key={i}>
-                            <a className={`text-xl mb-8 lg:mb-0 lg:ml-16 ${pathname == n.slug ? 'font-bold text-custom-yellow' : 'text-text-secondary'}`}>{n.title}</a>
-                        </Link>
+                        n.isButton ?
+                            <a href={n.href} target='_blank' className="p-4 mb-8 text-lg font-semibold border-2 border-yellow-500 hover:bg-yellow-50 rounded-xl lg:mb-0 lg:ml-16">
+                                {n.title}
+                            </a>
+                            :
+                            <Link href={n.slug} key={i}>
+                                <a className={`text-xl mb-8 lg:mb-0 lg:ml-16 ${pathname == n.slug ? 'font-bold text-custom-yellow' : 'text-text-secondary'}`}>{n.title}</a>
+                            </Link>
                     )}
                 </div>
             </div>
